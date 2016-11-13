@@ -7,7 +7,7 @@ Material Design,  RxJava & Retrofit...
 相关文章：http://drakeet.me/2015-08-20
 
 <a href="http://www.coolapk.com/apk/me.drakeet.meizhi" target="_blank">
-<img src="http://drakeet.me/wp-content/uploads/2015/10/gp.png" width="64" height="64">
+<img src="http://image.coolapk.com/apk_logo/2016/0108/12202_1452248424_4592.png" width="64" height="64">
 </a>
 
 下载：http://www.coolapk.com/apk/me.drakeet.meizhi
