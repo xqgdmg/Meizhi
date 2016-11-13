@@ -6,13 +6,11 @@ Material Design,  RxJava & Retrofit...
 
 相关文章：http://drakeet.me/2015-08-20
 
-<a href="https://play.google.com/store/apps/details?id=me.drakeet.meizhi" target="_blank">
-<img class="alignnone size-full wp-image-1175" src="http://drakeet.me/wp-content/uploads/2015/10/gp.png" alt="gp" width="129" height="45">
+<a href="http://www.coolapk.com/apk/me.drakeet.meizhi" target="_blank">
+<img src="http://drakeet.me/wp-content/uploads/2015/10/gp.png" width="64" height="64">
 </a>
 
-Google Play: https://play.google.com/store/apps/details?id=me.drakeet.meizhi
-
-直接下载：https://fir.im/mengmeizhi (请尽量 Google Play 下载，如果喜欢，去给个五星好评，非常感谢！)
+下载：http://www.coolapk.com/apk/me.drakeet.meizhi
 
 v2.5.6（2.06MB）
 * 修复 缓存机制问题；
