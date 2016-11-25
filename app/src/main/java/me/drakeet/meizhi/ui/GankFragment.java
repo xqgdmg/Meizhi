@@ -36,10 +36,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.bumptech.glide.Glide;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import com.squareup.otto.Subscribe;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,8 +44,8 @@ import me.drakeet.meizhi.DrakeetFactory;
 import me.drakeet.meizhi.LoveBus;
 import me.drakeet.meizhi.R;
 import me.drakeet.meizhi.data.GankData;
-import me.drakeet.meizhi.event.OnKeyBackClickEvent;
 import me.drakeet.meizhi.data.entity.Gank;
+import me.drakeet.meizhi.event.OnKeyBackClickEvent;
 import me.drakeet.meizhi.ui.adapter.GankListAdapter;
 import me.drakeet.meizhi.ui.base.BaseActivity;
 import me.drakeet.meizhi.util.LoveStrings;
@@ -58,6 +54,11 @@ import me.drakeet.meizhi.util.Shares;
 import me.drakeet.meizhi.util.Toasts;
 import me.drakeet.meizhi.widget.LoveVideoView;
 import me.drakeet.meizhi.widget.VideoImageView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 
@@ -181,12 +182,12 @@ public class GankFragment extends Fragment {
         String url = "http://gank.io/" + String.format("%s/%s/%s", mYear, mMonth, mDay);
         Request request = new Request.Builder().url(url).build();
         client.newCall(request).enqueue(new Callback() {
-            @Override public void onFailure(Request request, IOException e) {
+            @Override public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
             }
 
 
-            @Override public void onResponse(Response response) throws IOException {
+            @Override public void onResponse(Call call, Response response) throws IOException {
                 String body = response.body().string();
                 mVideoPreviewUrl = LoveStrings.getVideoPreviewImageUrl(body);
                 startPreview(mVideoPreviewUrl);

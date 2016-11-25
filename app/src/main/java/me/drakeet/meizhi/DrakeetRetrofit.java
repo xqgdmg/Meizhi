@@ -21,11 +21,13 @@ package me.drakeet.meizhi;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.squareup.okhttp.OkHttpClient;
 import java.util.concurrent.TimeUnit;
-import retrofit.RestAdapter;
-import retrofit.client.OkClient;
-import retrofit.converter.GsonConverter;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import rx.schedulers.Schedulers;
 
 /**
  * 2015-08-07T03:57:47.229Z
@@ -45,19 +47,25 @@ public class DrakeetRetrofit {
 
 
     DrakeetRetrofit() {
-        OkHttpClient client = new OkHttpClient();
-        client.setReadTimeout(12, TimeUnit.SECONDS);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        if (DrakeetFactory.isDebug) {
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            httpClient.addInterceptor(logging);
+        }
+        httpClient.connectTimeout(12, TimeUnit.SECONDS);
+        OkHttpClient client = httpClient.build();
 
-        RestAdapter.Builder builder = new RestAdapter.Builder();
-        builder.setClient(new OkClient(client))
-               .setLogLevel(RestAdapter.LogLevel.FULL)
-               .setEndpoint("http://gank.io/api")
-               .setConverter(new GsonConverter(gson));
-        RestAdapter gankRestAdapter = builder.build();
-        builder.setEndpoint("https://leancloud.cn:443/1.1/classes");
-        RestAdapter drakeetRestAdapter = builder.build();
-        gankService = gankRestAdapter.create(GankApi.class);
-        drakeetService = drakeetRestAdapter.create(DrakeetApi.class);
+        Retrofit.Builder builder = new Retrofit.Builder();
+        builder.baseUrl("http://gank.io/api/")
+            .client(client)
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io()))
+            .addConverterFactory(GsonConverterFactory.create(gson));
+        Retrofit gankRest = builder.build();
+        builder.baseUrl("https://leancloud.cn:443/1.1/classes/");
+        Retrofit drakeetRest = builder.build();
+        gankService = gankRest.create(GankApi.class);
+        drakeetService = drakeetRest.create(DrakeetApi.class);
     }
 
 

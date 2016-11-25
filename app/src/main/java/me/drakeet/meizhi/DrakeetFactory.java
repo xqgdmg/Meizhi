@@ -30,6 +30,8 @@ public class DrakeetFactory {
     public static final int meizhiSize = 10;
     public static final int gankSize = 5;
 
+    public static boolean isDebug = true;
+
 
     public static GankApi getGankIOSingleton() {
         synchronized (monitor) {
