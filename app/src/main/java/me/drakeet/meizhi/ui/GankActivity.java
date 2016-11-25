@@ -44,7 +44,7 @@ public class GankActivity extends ToolbarActivity implements ViewPager.OnPageCha
     public static final String EXTRA_GANK_DATE = "gank_date";
 
     @Bind(R.id.pager) ViewPager mViewPager;
-    @Bind(R.id.tabLayout) TabLayout mTabLayout;
+    @Bind(R.id.tab_layout) TabLayout mTabLayout;
 
     GankPagerAdapter mPagerAdapter;
     Date mGankDate;

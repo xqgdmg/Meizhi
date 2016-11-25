@@ -99,8 +99,8 @@ public class MeizhiListAdapter
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @Bind(R.id.iv_meizhi) RatioImageView meizhiView;
-        @Bind(R.id.tv_title) TextView titleView;
+        @Bind(R.id.meizhi) RatioImageView meizhiView;
+        @Bind(R.id.title) TextView titleView;
         View card;
         Meizhi meizhi;
 

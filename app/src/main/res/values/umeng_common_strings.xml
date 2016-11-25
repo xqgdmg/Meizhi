@@ -18,6 +18,7 @@
   -->
 
 <resources>
+
     <string name="umeng_common_action_info_exist">The app is already in downloading list.</string>
     <string name="umeng_common_info_interrupt">dowload interrupted.</string>
     <string name="umeng_common_action_pause">Pause</string>
@@ -33,4 +34,5 @@
     <string name="umeng_common_patch_finish">Patch finished,click to install it.</string>
     <string name="umeng_common_silent_download_finish">New version is ready,click to install it.</string>
     <string name="umeng_common_icon">icon</string>
+
 </resources>

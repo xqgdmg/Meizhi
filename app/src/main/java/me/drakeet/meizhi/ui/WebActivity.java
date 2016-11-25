@@ -52,7 +52,7 @@ public class WebActivity extends ToolbarActivity {
 
     @Bind(R.id.progressbar) NumberProgressBar mProgressbar;
     @Bind(R.id.webView) WebView mWebView;
-    @Bind(R.id.tv_title) TextSwitcher mTextSwitcher;
+    @Bind(R.id.title) TextSwitcher mTextSwitcher;
 
     private String mUrl, mTitle;
 

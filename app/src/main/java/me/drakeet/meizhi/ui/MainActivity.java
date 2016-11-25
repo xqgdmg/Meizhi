@@ -64,7 +64,7 @@ public class MainActivity extends SwipeRefreshBaseActivity {
 
     private static final int PRELOAD_SIZE = 6;
 
-    @Bind(R.id.rv_meizhi) RecyclerView mRecyclerView;
+    @Bind(R.id.list) RecyclerView mRecyclerView;
 
     private MeizhiListAdapter mMeizhiListAdapter;
     private List<Meizhi> mMeizhiList;

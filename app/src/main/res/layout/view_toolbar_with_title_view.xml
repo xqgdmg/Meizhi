@@ -35,7 +35,7 @@
         app:layout_scrollFlags="scroll|enterAlways">
 
         <TextSwitcher
-            android:id="@+id/tv_title"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </android.support.v7.widget.Toolbar>

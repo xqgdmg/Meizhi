@@ -64,4 +64,5 @@
         <item name="android:textSize">@dimen/material_button_text_size</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
 </resources>

@@ -71,10 +71,10 @@ public class GankFragment extends Fragment {
     private static final String ARG_MONTH = "month";
     private static final String ARG_DAY = "day";
 
-    @Bind(R.id.rv_gank) RecyclerView mRecyclerView;
+    @Bind(R.id.list) RecyclerView mRecyclerView;
     @Bind(R.id.stub_empty_view) ViewStub mEmptyViewStub;
     @Bind(R.id.stub_video_view) ViewStub mVideoViewStub;
-    @Bind(R.id.iv_video) VideoImageView mVideoImageView;
+    @Bind(R.id.video_image) VideoImageView mVideoImageView;
     LoveVideoView mVideoView;
 
     int mYear, mMonth, mDay;

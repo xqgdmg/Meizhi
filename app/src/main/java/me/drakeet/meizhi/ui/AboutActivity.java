@@ -39,7 +39,7 @@ import me.drakeet.meizhi.util.Shares;
 public class AboutActivity extends BaseActivity {
 
     @Bind(R.id.toolbar) Toolbar mToolbar;
-    @Bind(R.id.tv_version) TextView mVersionTextView;
+    @Bind(R.id.version) TextView mVersionTextView;
     @Bind(R.id.collapsing_toolbar) CollapsingToolbarLayout mCollapsingToolbarLayout;
 
 

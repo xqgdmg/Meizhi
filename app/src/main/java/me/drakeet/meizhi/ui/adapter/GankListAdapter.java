@@ -109,8 +109,8 @@ public class GankListAdapter extends AnimRecyclerViewAdapter<GankListAdapter.Vie
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_category) TextView category;
-        @Bind(R.id.tv_title) TextView gank;
+        @Bind(R.id.category) TextView category;
+        @Bind(R.id.title) TextView gank;
 
 
         public ViewHolder(View itemView) {
@@ -119,7 +119,7 @@ public class GankListAdapter extends AnimRecyclerViewAdapter<GankListAdapter.Vie
         }
 
 
-        @OnClick(R.id.ll_gank_parent) void onGank(View v) {
+        @OnClick(R.id.gank_layout) void onGank(View v) {
             Gank gank = mGankList.get(getLayoutPosition());
             Intent intent = WebActivity.newIntent(v.getContext(), gank.url, gank.desc);
             v.getContext().startActivity(intent);

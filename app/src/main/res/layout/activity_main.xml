@@ -25,13 +25,13 @@
     <include layout="@layout/view_toolbar"/>
 
     <me.drakeet.meizhi.widget.MultiSwipeRefreshLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_meizhi"
+            android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="2.5dp"
@@ -43,17 +43,16 @@
         android:id="@+id/main_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/fab_margin_bottom"
-        android:layout_marginRight="@dimen/fab_margin_right"
         android:layout_gravity="right|bottom"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
         android:clickable="true"
-        android:src="@mipmap/ic_github"
         android:elevation="4dp"
         app:elevation="4dp"
         app:layout_anchor="@id/swipe_refresh_layout"
         app:borderWidth="0dp"
         app:layout_anchorGravity="right|bottom"
-        app:layout_behavior="me.drakeet.meizhi.widget.ScrollAwareFABBehavior"/>
+        app:layout_behavior="me.drakeet.meizhi.widget.ScrollAwareFABBehavior"
+        android:src="@mipmap/ic_github"/>
 
 </android.support.design.widget.CoordinatorLayout>
-
